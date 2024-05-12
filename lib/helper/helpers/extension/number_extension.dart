@@ -14,7 +14,7 @@ extension GtdDouble on double {
   }
 }
 
-extension DVTInt on int {
+extension GtdInt on int {
   String toCurrency({String? lang}) {
     return '${NumberFormat.decimalPattern().format(this)} VND';
   }

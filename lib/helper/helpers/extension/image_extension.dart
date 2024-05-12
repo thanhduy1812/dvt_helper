@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
 
-extension DVTImage on Image {
+extension GtdImage on Image {
   static Image imgFromSupplier(
       {required String assetName, required String packageName, double? width, double? height, BoxFit? fit}) {
     return Image.asset(

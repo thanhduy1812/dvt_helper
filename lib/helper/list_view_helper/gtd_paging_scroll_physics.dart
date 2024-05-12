@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class DVTPagingScrollPhysics extends ScrollPhysics {
+class GtdPagingScrollPhysics extends ScrollPhysics {
   final double itemDimension;
 
-  const DVTPagingScrollPhysics({required this.itemDimension, super.parent});
+  const GtdPagingScrollPhysics({required this.itemDimension, super.parent});
 
   @override
-  DVTPagingScrollPhysics applyTo(ScrollPhysics? ancestor) {
-    return DVTPagingScrollPhysics(itemDimension: itemDimension, parent: buildParent(ancestor));
+  GtdPagingScrollPhysics applyTo(ScrollPhysics? ancestor) {
+    return GtdPagingScrollPhysics(itemDimension: itemDimension, parent: buildParent(ancestor));
   }
 
   double _getPage(ScrollMetrics position) {

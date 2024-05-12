@@ -8,7 +8,7 @@ class JsonParser {
       return fromJson(response.cast());
     } on TypeError catch (e) {
       Logger.e('Trace: ${e.stackTrace} \nErrorMess: ${e.toString()}', tag: "JsonParser - jsonToModel");
-      throw DVTUtilError.fromError(code: DVTErrorConstant.typeError.code, message: e.stackTrace.toString());
+      throw GtdUtilError.fromError(code: GtdErrorConstant.typeError.code, message: e.stackTrace.toString());
     } catch (e) {
       rethrow;
     }
@@ -19,7 +19,7 @@ class JsonParser {
       return data.map((e) => fromJson((e as Map).cast())).toList();
     } on TypeError catch (e) {
       Logger.e('Trace: ${e.stackTrace} \nErrorMess: ${e.toString()}', tag: "JsonParser - jsonArrayToModel");
-      throw DVTUtilError.fromError(code: DVTErrorConstant.typeError.code, message: e.stackTrace.toString());
+      throw GtdUtilError.fromError(code: GtdErrorConstant.typeError.code, message: e.stackTrace.toString());
     } catch (e) {
       rethrow;
     }

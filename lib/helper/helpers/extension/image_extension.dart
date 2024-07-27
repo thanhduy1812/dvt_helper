@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:dvt_helper/helper/helper.dart';
-import 'package:dvt_helper/helper/helpers/extension/string_extension.dart';
+import 'package:gtd_helper/helper/helper.dart';
+import 'package:gtd_helper/helper/helpers/extension/string_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';

@@ -1,5 +1,5 @@
-import 'package:dvt_helper/helper/dvt_error.dart';
-import 'dvt_error_constant.dart';
+import 'package:gtd_helper/helper/gtd_error.dart';
+import 'gtd_error_constant.dart';
 import 'gtd_app_logger.dart';
 
 class JsonParser {

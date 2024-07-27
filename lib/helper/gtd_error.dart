@@ -1,4 +1,4 @@
-import 'package:dvt_helper/helper/dvt_error_constant.dart';
+import 'package:gtd_helper/helper/gtd_error_constant.dart';
 
 class GtdUtilError implements Exception {
   String message = "";

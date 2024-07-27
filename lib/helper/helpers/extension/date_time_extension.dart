@@ -1,4 +1,4 @@
-import 'package:dvt_helper/helper/gtd_app_logger.dart';
+import 'package:gtd_helper/helper/gtd_app_logger.dart';
 import 'package:intl/intl.dart';
 
 const String pattern1 = "dd/MM/yyyy";

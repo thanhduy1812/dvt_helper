@@ -1,3 +1,4 @@
-## 1.0.1
+## 1.0.3
 
-* Update support platforms.
+- Update support platforms.
+- Update new package

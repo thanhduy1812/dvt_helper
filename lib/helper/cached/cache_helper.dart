@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:dvt_helper/helper/gtd_json_parser.dart';
+import 'package:gtd_helper/helper/gtd_json_parser.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';

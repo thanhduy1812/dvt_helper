@@ -3,16 +3,24 @@ import 'package:intl/intl.dart';
 
 extension GtdString on String {
   // packages/resource/vib_assets/images/logo_b2c.svg
-  static pathForAsset(String package, String assetName) {
-    return 'packages/$package/$assetName';
+  static pathForAsset(String? package, String assetName) {
+    if (package != null) {
+      return 'packages/$package/$assetName';
+    } else {
+      return assetName;
+    }
   }
 
   static urlForAssetAirlineLogo(String fileName, String assetName) {
     return 'https://750bc7d3dc6109b.cmccloud.com.vn/Booking/AirBooking/images/AirLogos/$assetName.$fileName';
   }
 
-  static pathForAssetGlobal(String package, String assetName) {
-    return 'packages/$package/$assetName';
+  static pathForAssetGlobal(String? package, String assetName) {
+    if (package != null) {
+      return 'packages/$package/$assetName';
+    } else {
+      return assetName;
+    }
   }
 
   String removeDiacritics() {

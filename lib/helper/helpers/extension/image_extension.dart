@@ -7,7 +7,7 @@ import 'package:lottie/lottie.dart';
 
 extension GtdImage on Image {
   static Image imgFromSupplier(
-      {required String assetName, required String packageName, double? width, double? height, BoxFit? fit}) {
+      {required String assetName, String? packageName, double? width, double? height, BoxFit? fit}) {
     return Image.asset(
       GtdString.pathForAsset(packageName, assetName),
       width: width,
@@ -29,7 +29,7 @@ extension GtdImage on Image {
 
   static Widget svgFromSupplier(
       {required String assetName,
-      required String packageName,
+      String? packageName,
       double? width,
       double? height,
       BoxFit fit = BoxFit.contain,
@@ -55,7 +55,7 @@ extension GtdImage on Image {
 
   static Widget svgFromCommon(
       {required String assetName,
-      required String packageName,
+      String? packageName,
       double? width,
       double? height,
       BoxFit fit = BoxFit.contain,
@@ -69,7 +69,7 @@ extension GtdImage on Image {
     );
   }
 
-  static Image giftFromSupplier({required String assetName, required String packageName, BoxFit? boxFit}) {
+  static Image giftFromSupplier({required String assetName, String? packageName, BoxFit? boxFit}) {
     return Image.asset(
       GtdString.pathForAsset(packageName, assetName),
       gaplessPlayback: true,
@@ -77,7 +77,7 @@ extension GtdImage on Image {
     );
   }
 
-  static Image giftFromCommon({required String assetName, required String packageName, BoxFit? boxFit}) {
+  static Image giftFromCommon({required String assetName, String? packageName, BoxFit? boxFit}) {
     return Image.asset(
       GtdString.pathForAsset(packageName, assetName),
       gaplessPlayback: true,
@@ -153,7 +153,7 @@ extension GtdImage on Image {
   //MARK: Using for Lottie Json from Adobe Effect or network
   static Widget assetAnimated(
       {required String assetName,
-      required String packageName,
+      String? packageName,
       double? width,
       double? height,
       BoxFit? fit,
@@ -178,7 +178,7 @@ extension GtdImage on Image {
 
   static Widget networkAnimated(
       {required String assetName,
-      required String packageName,
+      String? packageName,
       double? width,
       double? height,
       BoxFit? fit,

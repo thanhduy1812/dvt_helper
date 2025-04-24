@@ -1,0 +1,22 @@
+name: gtd_helper_example
+description: Example project for GTD Helper package
+version: 1.0.0
+publish_to: 'none'
+
+environment:
+  sdk: ">=3.3.3 <4.0.0"
+  flutter: ">=3.13.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  gtd_helper:
+    path: ../
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true 

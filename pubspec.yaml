@@ -1,12 +1,12 @@
 name: gtd_helper
 description: "Helper for new project"
-version: 1.0.4
+version: 1.0.11
 homepage: https://github.com/thanhduy1812/dvt_helper
 repository: https://github.com/thanhduy1812/dvt_helper
 
 environment:
   sdk: ">=3.3.3 <4.0.0"
-  flutter: ">=1.17.0"
+  flutter: ">=3.13.0"
 platforms:
   android:
   ios:
@@ -18,22 +18,29 @@ platforms:
 dependencies:
   flutter:
     sdk: flutter
-  intl: ^0.19.0
-  flutter_bloc: ^8.1.3
+  intl: ^0.20.2
+  flutter_bloc: ^9.1.0
   rxdart: ^0.28.0
   equatable: ^2.0.5
-  crypto: ^3.0.2
-  shared_preferences: ^2.1.1
+  crypto: ^3.0.3
+  shared_preferences: ^2.2.2
   flutter_svg: ^2.0.10+1
-  go_router: ^14.2.1
+  go_router: ^15.1.1
   lottie: ^3.1.0
-  cached_network_image: ^3.2.3
+  cached_network_image: ^3.3.1
   meta: ^1.11.0
+  path_drawing: ^1.0.1
+  path: ^1.9.0
+  sticky_headers: ^0.3.0+2
+  flutter_html: ^3.0.0
+  azlistview: ^2.0.0
+  url_launcher: ^6.3.0
+  gtd_network: ^1.0.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

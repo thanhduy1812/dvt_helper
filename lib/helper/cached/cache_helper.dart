@@ -1,19 +1,16 @@
 import 'dart:convert';
 
-import 'package:gtd_helper/helper/gtd_json_parser.dart';
+import 'package:gtd_network/network/network_service/gtd_json_parser.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // import 'package:path_provider/path_provider.dart' as path_provider;
 enum CacheStorageType {
-  flightBox,
-  hotelBox,
-  comboFlightBox,
-  comboHotelBox,
-  flightLocations,
-  hotelLocations,
-  accountBox,
+  appToken,
+  appProfile,
+  appUser,
+  appLanguage,
 }
 
 class CacheHelper {
@@ -22,14 +19,6 @@ class CacheHelper {
   CacheHelper._();
 
   static final shared = CacheHelper._();
-
-  // static Future<void> init() async {
-  //   prefs = await SharedPreferences.getInstance();
-  // }
-
-  static const String cachedLang = "cachedLang";
-  static const String cachedAppToken = "cachedAppToken";
-  // static const String cachedAccountData = "cachedAccountData";
 
   void initCachedMemory() async {
     try {
@@ -51,7 +40,7 @@ class CacheHelper {
   }
 
   String getCachedLanguage() {
-    final code = prefs?.getString(cachedLang);
+    final code = prefs?.getString(CacheStorageType.appLanguage.name);
     if (code != null) {
       return code;
     } else {
@@ -60,9 +49,9 @@ class CacheHelper {
   }
 
   Future<void> cacheLanguage(String code) async {
-    await prefs?.setString(cachedLang, code);
+    await prefs?.setString(CacheStorageType.appLanguage.name, code);
     if (kDebugMode) {
-      print("Gotadi cacheLanguage: $code");
+      print("VNLook cacheLanguage: $code");
     }
   }
 
@@ -72,7 +61,7 @@ class CacheHelper {
         print("getCachedAppToken but prefs is null");
       }
     }
-    final token = prefs?.getString(cachedAppToken);
+    final token = prefs?.getString(CacheStorageType.appToken.name);
     return token ?? "";
     //Handle token null here
   }
@@ -85,17 +74,17 @@ class CacheHelper {
       initCachedMemory();
     }
     if (kDebugMode) {
-      print("Gotadi cache Token precache: $token");
+      print("VNLook cache Token precache: $token");
     }
     try {
       // prefs ??= await SharedPreferences.getInstance();
-      await prefs?.setString(cachedAppToken, token);
+      await prefs?.setString(CacheStorageType.appToken.name, token);
       if (kDebugMode) {
-        print("Gotadi cache Token success: $token");
+        print("VNLook cache Token success: $token");
       }
     } catch (e) {
       if (kDebugMode) {
-        print("Gotadi cache Token error: $e");
+        print("VNLook cache Token error: $e");
       }
     }
   }
@@ -103,7 +92,7 @@ class CacheHelper {
   T? loadSavedObject<T>(T Function(Map<String, dynamic> map) fromJson, {required String key}) {
     final String? jsonString = prefs?.getString(key);
     if (jsonString != null) {
-      T? model = JsonParser.jsonToModel(fromJson, json.decode(jsonString));
+      T? model = GtdJsonParser.jsonToModel(fromJson, json.decode(jsonString));
       return model;
     }
     return null;
@@ -116,7 +105,7 @@ class CacheHelper {
   List<T> loadListSavedObject<T>(T Function(Map<String, dynamic> map) fromJson, {required String key}) {
     final List<String>? jsonListString = prefs?.getStringList(key);
     if (jsonListString != null) {
-      List<T> models = JsonParser.jsonArrayToModel(fromJson, jsonListString.map((e) => json.decode(e)).toList());
+      List<T> models = GtdJsonParser.jsonArrayToModel(fromJson, jsonListString.map((e) => json.decode(e)).toList());
       return models;
     }
     return [];
@@ -128,10 +117,5 @@ class CacheHelper {
 
   void removeCachedSharedObject(String key) async {
     await prefs?.remove(key);
-  }
-
-  void removeUserCache() {
-    removeCachedSharedObject(cachedAppToken);
-    // removeCachedSharedObject(cachedAccountData);
   }
 }

@@ -1,14 +1,15 @@
 import 'package:gtd_helper/helper/gtd_app_logger.dart';
 import 'package:intl/intl.dart';
 
-const String pattern1 = "dd/MM/yyyy";
-const String iosPattern = "yyyy-MM-ddTHH:mm:ss'Z'";
-const String fullDateTimePattern = "HH:mm, EEE dd/MM/yyyy";
-DateFormat dateFormat = DateFormat("dd/MM/yyyy");
-DateFormat dateFormatFlight = DateFormat("HH:mm - EEEE, dd/MM/yyyy");
+const String shortPattern = "dd/MM/yyyy";
+const String utcPattern = "yyyy-MM-ddTHH:mm:ss'Z'";
+const String fullDateTimePattern1 = "HH:mm, EEE dd/MM/yyyy";
+const String fullDateTimePattern2= "HH:mm - EEEE, dd/MM/yyyy";
+DateFormat dateFormat = DateFormat(shortPattern);
+DateFormat dateFormatFlight = DateFormat(fullDateTimePattern2);
 DateFormat monthYearFormat = DateFormat("MM/yyyy");
-DateFormat iosDateFormat = DateFormat("yyyy-MM-ddTHH:mm:ss'Z'");
-DateFormat fullDateTimeFormat = DateFormat(fullDateTimePattern);
+DateFormat iosDateFormat = DateFormat(utcPattern);
+DateFormat fullDateTimeFormat = DateFormat(fullDateTimePattern1);
 
 extension GtdDateTime on DateTime {
   //Format date at local with timezone system

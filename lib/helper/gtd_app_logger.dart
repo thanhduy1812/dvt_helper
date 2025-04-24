@@ -2,7 +2,7 @@ import 'dart:developer';
 
 class Logger {
   // ignore: constant_identifier_names
-  static const String _DEFAULT_TAG_PREFIX = "GotadiRepository";
+  static const String _DEFAULT_TAG_PREFIX = "VNLookApp";
 
   ///use Log.v. Print all Logs
   ///ignore: constant_identifier_names

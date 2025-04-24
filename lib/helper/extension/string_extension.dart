@@ -1,4 +1,4 @@
-import 'package:gtd_helper/helper/helpers/extension/date_time_extension.dart';
+import 'package:gtd_helper/helper/extension/date_time_extension.dart';
 import 'package:intl/intl.dart';
 
 extension GtdString on String {
@@ -90,7 +90,7 @@ extension GtdStringNull on String? {
       return null;
     } else {
       final date = DateTime.parse(this!);
-      return date.localDate(pattern1);
+      return date.localDate(shortPattern);
     }
   }
 }

@@ -1,12 +1,12 @@
 name: gtd_helper
-description: "Helper for new project"
+description: "A comprehensive Flutter utility package providing helper functions, extensions, and UI components to streamline development for Gotadi projects."
 version: 1.0.11
 homepage: https://github.com/thanhduy1812/dvt_helper
 repository: https://github.com/thanhduy1812/dvt_helper
 
 environment:
   sdk: ">=3.3.3 <4.0.0"
-  flutter: ">=3.13.0"
+  flutter: ">=3.7.0"
 platforms:
   android:
   ios:
@@ -36,6 +36,7 @@ dependencies:
   azlistview: ^2.0.0
   url_launcher: ^6.3.0
   gtd_network: ^1.0.5
+  collection: ^1.18.0
 
 dev_dependencies:
   flutter_test:

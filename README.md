@@ -196,7 +196,7 @@ Add this to your package's pubspec.yaml file:
 
 ```yaml
 dependencies:
-  gtd_helper: ^1.0.11
+  gtd_helper: ^1.0.6
 ```
 
 ## Requirements
